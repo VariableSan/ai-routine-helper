@@ -4,7 +4,12 @@ const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,ts}'],
+  content: [
+    './index.html',
+    './src/**/*.{vue,ts}',
+    'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx,vue}',
+    'node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
+  ],
   // theme: {
   //   extend: {
   //     // here's how to extend fonts if needed
@@ -21,5 +26,6 @@ module.exports = {
       // Collections: https://icones.js.org/
       collections: getIconCollections(['mdi']),
     }),
+    require('flowbite/plugin'),
   ],
 }

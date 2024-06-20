@@ -1,6 +1,7 @@
 import { createHead } from '@unhead/vue'
 import { createPinia } from 'pinia'
 import { createApp, markRaw } from 'vue'
+import '../node_modules/flowbite-vue/dist/index.css'
 import App from './App.vue'
 import './assets/index.postcss'
 import router from './router'

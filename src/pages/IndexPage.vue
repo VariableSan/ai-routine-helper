@@ -1,8 +1,14 @@
 <script setup lang="ts">
+import { FwbButton } from 'flowbite-vue'
+
 const store = useStore()
+const { toggleDark } = useGlobalStore()
 </script>
+
 <template>
-  <div class="p-4 mx-auto prose md:px-6 prose-indigo sm:rounded-md">
+  <div class="prose prose-indigo mx-auto p-4 sm:rounded-lg md:px-6">
+    <FwbButton @click="toggleDark"> toggle dark </FwbButton>
+
     <HelloWorld msg="Hello World Component" />
 
     <h2>Template Project Features</h2>

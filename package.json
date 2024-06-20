@@ -19,6 +19,8 @@
   "dependencies": {
     "@unhead/vue": "1.9.12",
     "@vueuse/core": "^10.11.0",
+    "flowbite": "^2.3.0",
+    "flowbite-vue": "^0.1.5",
     "pinia": "2.1.7",
     "vue": "3.4.27",
     "vue-router": "4.3.2"

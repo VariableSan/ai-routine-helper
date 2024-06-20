@@ -20,7 +20,7 @@ export default defineConfig({
         'vue-router',
         'pinia',
         {
-          '@/store': ['useStore'],
+          '@/store': ['useStore', 'useGlobalStore'],
         },
         unheadVueComposablesImports,
       ],

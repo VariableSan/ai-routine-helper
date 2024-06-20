@@ -1,3 +1,4 @@
+import { useDark, useToggle } from '@vueuse/core'
 import { defineStore } from 'pinia'
 
 const versionString =
@@ -32,4 +33,19 @@ export const useStore = defineStore('main', {
       return !state.isInitialized
     },
   },
+})
+
+export const useGlobalStore = defineStore('global', () => {
+  const isDark = useDark({
+    initialValue: 'auto',
+    selector: 'body',
+  })
+
+  const toggleDark = useToggle(isDark)
+
+  return {
+    isDark,
+
+    toggleDark,
+  }
 })

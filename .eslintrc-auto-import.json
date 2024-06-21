@@ -89,6 +89,6 @@
     "useServerHead": true,
     "useServerHeadSafe": true,
     "useServerSeoMeta": true,
-    "useGlobalStore": true,
+    "useGlobalStore": true
   }
 }

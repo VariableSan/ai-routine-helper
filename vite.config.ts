@@ -39,4 +39,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  preview: {
+    host: true,
+    port: Number(process.env.VITE_APP_PORT) || 4173,
+  },
 })

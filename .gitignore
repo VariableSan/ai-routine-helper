@@ -22,7 +22,7 @@ pnpm-debug.log*
 
 # Editor directories and files
 .idea
-.vscode
+.vscode/*
 *.suo
 *.ntvs*
 *.njsproj
@@ -34,3 +34,5 @@ LOCAL_NOTES.md
 /playwright/.cache
 package-lock.json
 *.tsbuildinfo
+
+!.vscode/extensions.json

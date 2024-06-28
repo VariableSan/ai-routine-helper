@@ -1,19 +1,17 @@
-FROM node:20.15.0-alpine
+FROM node:20.15.0-alpine AS builder
 
 RUN npm install -g pnpm
-
 WORKDIR /app
-
-COPY package*.json pnpm-lock.yaml .env ./
-
+COPY package*.json pnpm-lock.yaml ./
 RUN pnpm i
 
 COPY . .
 
-ENV VITE_APP_PORT ${VITE_APP_PORT}
-
 RUN pnpm build-only
 
-EXPOSE ${VITE_APP_PORT}
+FROM nginx:stable-alpine3.19-slim
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD [ "pnpm", "preview-only" ]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
